@@ -1,0 +1,21 @@
+# Node.js / npm
+node_modules/
+package-lock.json
+
+# Electron
+dist/
+*.log
+electron-out/
+
+# Lua
+*.luac
+
+# macOS
+.DS_Store
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Build
+build/
