@@ -1,0 +1,30 @@
+{
+  "name": "holygrail",
+  "version": "1.0.0",
+  "description": "Custom IDE for building pixel action/adv RPG",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olearykieran/holygrail.git"
+  },
+  "keywords": [
+    "ide",
+    "custom",
+    "gamedev"
+  ],
+  "author": "wizard kieran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olearykieran/holygrail/issues"
+  },
+  "homepage": "https://github.com/olearykieran/holygrail#readme",
+  "devDependencies": {
+    "electron": "^26.1.0"
+  },
+  "dependencies": {
+    "ace-builds": "^1.24.1"
+  }
+}

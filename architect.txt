@@ -1,0 +1,61 @@
+
+Excellent! Let's move on to the architecture design of HolyGrail IDE. The architecture will be modular, allowing for easy extension and maintenance. I'll outline the architecture in terms of components, their roles, and their interactions.
+
+HolyGrail IDE Architecture
+Components:
+Core Engine
+
+Manages the lifecycle of the IDE.
+Initializes all other components.
+Code Editor Module
+
+Provides syntax highlighting.
+Manages open files and tabs.
+Auto-completion and error highlighting.
+File System Manager
+
+Handles file operations like creating, deleting, and saving files.
+Works closely with the Code Editor and Project Explorer.
+Project Explorer
+
+Shows a tree-like view of the game project.
+Allows for the organization of game assets and code files.
+Build & Run Manager
+
+Handles the compilation and execution of game code.
+Allows for debugging and setting breakpoints.
+Map Editor Module
+
+Provides tools for creating and editing game maps.
+Sprite Editor Module
+
+Provides tools for sprite editing and animation.
+AI Tester Module
+
+Environment to test and debug AI behaviors.
+Version Control Manager
+
+Git integration for versioning.
+Console Output
+
+Shows console output, errors, and print statements.
+Database Manager
+
+Optional component for managing game databases.
+UI Manager
+
+Manages the IDE interface, including customization options.
+Language Support:
+Lua: Integrated with MOAI SDK.
+C++: Libraries and compilers for C++ support.
+Interactions:
+All modules will interact with the Core Engine for initialization and lifecycle management.
+File System Manager will serve as the backbone for operations related to files.
+Code Editor, Map Editor, and AI Tester will work in tandem with the Build & Run Manager for testing and debugging.
+Technologies:
+Frontend: Electron for the UI, leveraging HTML, CSS, and JavaScript.
+Backend: Node.js for server-side logic.
+Scripting: Lua for game logic.
+Performance Critical Code: C++.
+Database: SQLite or similar lightweight DB if needed.
+This architecture allows for a clean separation of concerns, making it easier to manage, update, or extend individual components without affecting others.
