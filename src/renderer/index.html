@@ -2,13 +2,55 @@
 <html>
   <head>
     <title>Holy Grail</title>
-    <!-- Add this line to include Ace Editor -->
-    <script src="../node_modules/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <h1>Welcome to Holy Grail</h1>
-    <div id="editor">Your code here</div>
-    <!-- Your other scripts should come after -->
-    <script src="editor.js"></script>
+    <div id="app-wrapper">
+      <div id="file-explorer" class="medieval-box hidden">
+        <!-- File Explorer content... -->
+      </div>
+      <div id="asset-manager" class="medieval-box hidden">
+        <!-- Asset Manager UI goes here -->
+      </div>
+      <div id="editor" class="medieval-box">
+        <!-- Code Editor content... -->
+      </div>
+    </div>
+    <script src="./editor.js"></script>
+    <script src="./file-explorer.js"></script>
+    <script src="./asset-manager.js"></script>
+    <script>
+      document.addEventListener('keydown', (event) => {
+        // Toggle Code Editor (Alt + Ctrl + A)
+        if (event.altKey && event.ctrlKey && event.key === 'a') {
+          toggleSection('editor');
+        }
+        // Toggle File Explorer (Alt + Ctrl + S)
+        if (event.altKey && event.ctrlKey && event.key === 's') {
+          toggleSection('file-explorer');
+        }
+        // Toggle Asset Manager (Alt + Ctrl + D)
+        if (event.altKey && event.ctrlKey && event.key === 'd') {
+          toggleSection('asset-manager');
+        }
+      });
+      
+      function toggleSection(sectionId) {
+        const sections = ['editor', 'file-explorer', 'asset-manager'];
+        sections.forEach((section) => {
+          const element = document.getElementById(section);
+          if (sectionId === section) {
+            element.classList.remove('hidden');
+          } else {
+            element.classList.add('hidden');
+          }
+        });
+      }
+      
+      // Initial state: hide all sections except the Code Editor
+      window.onload = () => {
+        toggleSection('editor');
+      };
+    </script>
   </body>
 </html>
